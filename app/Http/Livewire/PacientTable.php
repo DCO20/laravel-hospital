@@ -38,7 +38,7 @@ final class PacientTable extends PowerGridComponent
             Header::make()->showSearchInput(),
             Footer::make()
                 ->showPerPage()
-                ->showRecordCount(),
+                ->showRecordCount('full'),
         ];
     }
 

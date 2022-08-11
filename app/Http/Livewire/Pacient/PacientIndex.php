@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Pacient;
 
 use Livewire\Component;
 
-class Index extends Component
+class PacientIndex extends Component
 {
     public function render()
     {

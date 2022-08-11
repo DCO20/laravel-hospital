@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Livewire\Pacient\Index;
+use App\Http\Livewire\Pacient\PacientCreate;
+use App\Http\Livewire\Pacient\PacientIndex;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,5 +28,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/pacientes', Index::class)->name('pacient.index');
+    Route::get('/pacientes', PacientIndex::class)->name('pacient.index');
+    Route::get('/pacientes/cadastro', PacientCreate::class)->name('pacient.create');
 });
