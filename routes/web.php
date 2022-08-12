@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Livewire\Pacient\PacientCreate;
+use App\Http\Livewire\Pacient\PacientDelete;
+use App\Http\Livewire\Pacient\PacientEdit;
 use App\Http\Livewire\Pacient\PacientIndex;
 use Illuminate\Support\Facades\Route;
 
@@ -29,5 +31,7 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/pacientes', PacientIndex::class)->name('pacient.index');
-    Route::get('/pacientes/cadastro', PacientCreate::class)->name('pacient.create');
+    Route::get('/paciente/cadastro', PacientCreate::class)->name('pacient.create');
+    Route::get('/paciente/{id}/editar', PacientEdit::class)->name('pacient.edit');
+    Route::get('/paciente/{id}/confirmar-exclusao', PacientDelete::class)->name('pacient.confirm_delete');
 });

@@ -8,23 +8,31 @@ use Livewire\Component;
 class PacientCreate extends Component
 {
     public $name = null;
+
     public $email = null;
+
     public $document = null;
+
     public $phone = null;
+
     public $street = null;
+
     public $number = null;
+
     public $description = null;
+
+    protected array $rules = [
+        'name' => 'required|max:50',
+        'email' => 'required|email',
+        'document' => 'required|max:20',
+        'phone' => 'required|max:10',
+        'street' => 'required|max:50',
+        'number' => 'required|max:10',
+    ];
 
     public function store()
     {
-        $this->validate([
-            'name' => 'required|max:50',
-            'email' => 'required|email',
-            'document' => 'required|max:20',
-            'phone' => 'required|max:10',
-            'street' => 'required|max:50',
-            'number' => 'required|max:10',
-        ]);
+        $this->validate();
 
         Pacient::create([
             'name' => $this->name,
