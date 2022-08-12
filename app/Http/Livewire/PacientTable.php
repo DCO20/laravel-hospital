@@ -116,22 +116,28 @@ final class PacientTable extends PowerGridComponent
         return [
 
             Column::make('Nome', 'name')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
 
             Column::make('Email', 'email')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
 
             Column::make('Documento', 'document')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
 
             Column::make('Telefone', 'phone')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
 
             Column::make('Rua', 'street')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
 
             Column::make('Número', 'number')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
 
         ];
     }
@@ -153,11 +159,14 @@ final class PacientTable extends PowerGridComponent
     {
         return [
             Button::make('editar', 'Editar')
-                ->class('bg-indigo-500 cursor-pointer text-white px-2 py-1 m-1 rounded text-sm'),
+                ->target('')
+                ->class('bg-indigo-500 cursor-pointer text-white px-2 py-1 m-1 rounded text-sm')
+                ->route('pacient.edit', ['id' => 'id']),
 
             Button::make('destroy', 'Excluir')
+                ->target('')
                 ->class('bg-red-500 cursor-pointer text-white px-2 py-1 m-1 rounded text-sm')
-                ->method('delete'),
+                ->route('pacient.confirm_delete', ['id' => 'id']),
         ];
     }
 
