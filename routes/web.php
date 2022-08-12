@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Livewire\Occupation\OccupationCreate;
+use App\Http\Livewire\Occupation\OccupationDelete;
+use App\Http\Livewire\Occupation\OccupationEdit;
+use App\Http\Livewire\Occupation\OccupationIndex;
 use App\Http\Livewire\Pacient\PacientCreate;
 use App\Http\Livewire\Pacient\PacientDelete;
 use App\Http\Livewire\Pacient\PacientEdit;
@@ -35,5 +39,12 @@ Route::middleware([
         Route::get('/cadastro', PacientCreate::class)->name('pacient.create');
         Route::get('/{id}/editar', PacientEdit::class)->name('pacient.edit');
         Route::get('/{id}/confirmar-exclusao', PacientDelete::class)->name('pacient.confirm_delete');
+    });
+
+    Route::prefix('ocupacao')->group(function () {
+        Route::get('/', OccupationIndex::class)->name('occupation.index');
+        Route::get('/cadastro', OccupationCreate::class)->name('occupation.create');
+        Route::get('/{id}/editar', OccupationEdit::class)->name('occupation.edit');
+        Route::get('/{id}/confirmar-exclusao', OccupationDelete::class)->name('occupation.confirm_delete');
     });
 });
