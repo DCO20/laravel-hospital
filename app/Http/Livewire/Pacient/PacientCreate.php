@@ -51,6 +51,6 @@ class PacientCreate extends Component
 
     public function render()
     {
-        return view('livewire.pacient.create');
+        return view('livewire.pacient.pacient-create');
     }
 }
