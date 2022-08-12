@@ -35,4 +35,14 @@ class Occupation extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    /**
+     * obtêm os funcionários
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function employees()
+    {
+        return $this->hasMany(Employee::class);
+    }
 }
