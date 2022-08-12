@@ -30,8 +30,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/pacientes', PacientIndex::class)->name('pacient.index');
-    Route::get('/paciente/cadastro', PacientCreate::class)->name('pacient.create');
-    Route::get('/paciente/{id}/editar', PacientEdit::class)->name('pacient.edit');
-    Route::get('/paciente/{id}/confirmar-exclusao', PacientDelete::class)->name('pacient.confirm_delete');
+    Route::prefix('paciente')->group(function () {
+        Route::get('/', PacientIndex::class)->name('pacient.index');
+        Route::get('/cadastro', PacientCreate::class)->name('pacient.create');
+        Route::get('/{id}/editar', PacientEdit::class)->name('pacient.edit');
+        Route::get('/{id}/confirmar-exclusao', PacientDelete::class)->name('pacient.confirm_delete');
+    });
 });
