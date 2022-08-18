@@ -75,7 +75,11 @@ final class EmployeeTable extends PowerGridComponent
      */
     public function relationSearch(): array
     {
-        return [];
+        return [
+            'occupation' => [ // relationship on dishes model
+                'name', // column enabled to search
+            ],
+        ];
     }
 
     /*
@@ -92,7 +96,9 @@ final class EmployeeTable extends PowerGridComponent
             ->addColumn('name')
             ->addColumn('email')
             ->addColumn('phone')
-            ->addColumn('occupation_id');
+            ->addColumn('occupation_id', function (Employee $model) {
+                return $model->occupation->name;
+            });
     }
 
     /*
