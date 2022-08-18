@@ -26,8 +26,8 @@ class PacientEdit extends Component
     protected array $rules = [
         'name' => 'required|max:50',
         'email' => 'required|email',
-        'document' => 'required|max:20',
-        'phone' => 'required|max:10',
+        'document' => 'required|cpf|max:15',
+        'phone' => 'required|max:15',
         'street' => 'required|max:50',
         'number' => 'required|max:10',
     ];

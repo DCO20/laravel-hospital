@@ -16,10 +16,10 @@
                 <div class="grid grid-cols-3 grid-flow-col gap-3">
                     <x-input wire:model.defer="name" type="text" label="Nome:" placeholder="Nome" required/>
                     <x-input wire:model.defer="email" type="email" label="Email:" placeholder="Email" />
-                    <x-input wire:model.defer="document" label="Docummento:" placeholder="Docummento" />
+                    <x-input wire:model.defer="document" class="cpf" label="CPF:" placeholder="CPF" />
                 </div>
                 <div class="grid grid-cols-3 grid-flow-col gap-3 mt-5">
-                    <x-input wire:model.defer="phone" label="Telefone:" placeholder="Telefone"/>
+                    <x-input wire:model.defer="phone" class="phone" label="Telefone:" placeholder="Telefone"/>
                     <x-input wire:model.defer="street" label="Rua:" placeholder="Rua" />
                     <x-input wire:model.defer="number" label="Número:" placeholder="Número" />
                 </div>

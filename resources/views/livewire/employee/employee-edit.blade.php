@@ -25,7 +25,7 @@
                 <div class="grid grid-cols-3 grid-flow-col gap-3">
                     <x-input wire:model.defer="name" type="text" label="Nome:" placeholder="Nome" required />
                     <x-input wire:model.defer="email" type="email" label="Email:" placeholder="Email" />
-                    <x-input wire:model.defer="phone" label="Telefone:" placeholder="Telefone" />
+                    <x-input wire:model.defer="phone" class="phone" label="Telefone:" placeholder="Telefone" />
                 </div>
                 <div class="mb-3 xl:w-96 mt-5">
                     <label class=" text-base

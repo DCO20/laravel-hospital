@@ -19,7 +19,7 @@ class EmployeeCreate extends Component
     protected array $rules = [
         'name' => 'required|max:50',
         'email' => 'required|email',
-        'phone' => 'required|max:10',
+        'phone' => 'required|max:14',
         'occupation_id' => 'required',
     ];
 
