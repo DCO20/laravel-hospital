@@ -50,7 +50,7 @@ class EmployeeEdit extends Component
 
         session()->flash('message', 'Cadastro atualizado com sucesso.');
 
-        return redirect()->route('employee.index');
+        return redirect()->route('employee.edit', $this->employee_id);
     }
 
     public function render()

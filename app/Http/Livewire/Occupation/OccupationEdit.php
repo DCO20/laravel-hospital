@@ -34,7 +34,7 @@ class OccupationEdit extends Component
 
         session()->flash('message', 'Cadastro atualizado com sucesso.');
 
-        return redirect()->route('occupation.index');
+        return redirect()->route('occupation.edit', $this->occupation_id);
     }
 
     public function render()

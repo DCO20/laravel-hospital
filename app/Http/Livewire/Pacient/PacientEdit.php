@@ -63,7 +63,7 @@ class PacientEdit extends Component
 
         session()->flash('message', 'Cadastro atualizado com sucesso.');
 
-        return redirect()->route('pacient.index');
+        return redirect()->route('pacient.edit', $this->pacient_id);
     }
 
     public function render()
