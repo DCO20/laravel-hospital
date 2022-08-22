@@ -49,4 +49,14 @@ class Doctor extends Model
     {
         return $this->belongsTo(Specialty::class)->withTrashed();
     }
+
+    /**
+     * obtêm os atendimentos
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class);
+    }
 }

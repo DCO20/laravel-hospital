@@ -41,4 +41,14 @@ class Pacient extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    /**
+     * obtêm os atendimentos
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function attendances()
+    {
+        return $this->hasMany(Attendance::class);
+    }
 }
