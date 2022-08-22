@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Livewire\Doctor\DoctorCreate;
+use App\Http\Livewire\Doctor\DoctorDelete;
+use App\Http\Livewire\Doctor\DoctorEdit;
+use App\Http\Livewire\Doctor\DoctorIndex;
 use App\Http\Livewire\Employee\EmployeeCreate;
 use App\Http\Livewire\Employee\EmployeeDelete;
 use App\Http\Livewire\Employee\EmployeeEdit;
@@ -42,12 +46,12 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    //Ocupação
-    Route::prefix('ocupacao')->as('occupation.')->group(function () {
-        Route::get('/', OccupationIndex::class)->name('index');
-        Route::get('/cadastro', OccupationCreate::class)->name('create');
-        Route::get('/{id}/editar', OccupationEdit::class)->name('edit');
-        Route::get('/{id}/confirmar-exclusao', OccupationDelete::class)->name('confirm_delete');
+    //Especialidade
+    Route::prefix('especialidade')->as('specialty.')->group(function () {
+        Route::get('/', SpecialtyIndex::class)->name('index');
+        Route::get('/cadastro', SpecialtyCreate::class)->name('create');
+        Route::get('/{id}/editar', SpecialtyEdit::class)->name('edit');
+        Route::get('/{id}/confirmar-exclusao', SpecialtyDelete::class)->name('confirm_delete');
     });
 
     //Funcionário
@@ -58,19 +62,27 @@ Route::middleware([
         Route::get('/{id}/confirmar-exclusao', EmployeeDelete::class)->name('confirm_delete');
     });
 
+    //Médico
+    Route::prefix('medico')->as('doctor.')->group(function () {
+        Route::get('/', DoctorIndex::class)->name('index');
+        Route::get('/cadastro', DoctorCreate::class)->name('create');
+        Route::get('/{id}/editar', DoctorEdit::class)->name('edit');
+        Route::get('/{id}/confirmar-exclusao', DoctorDelete::class)->name('confirm_delete');
+    });
+
+    //Ocupação
+    Route::prefix('ocupacao')->as('occupation.')->group(function () {
+        Route::get('/', OccupationIndex::class)->name('index');
+        Route::get('/cadastro', OccupationCreate::class)->name('create');
+        Route::get('/{id}/editar', OccupationEdit::class)->name('edit');
+        Route::get('/{id}/confirmar-exclusao', OccupationDelete::class)->name('confirm_delete');
+    });
+
     //Paciente
     Route::prefix('paciente')->as('pacient.')->group(function () {
         Route::get('/', PacientIndex::class)->name('index');
         Route::get('/cadastro', PacientCreate::class)->name('create');
         Route::get('/{id}/editar', PacientEdit::class)->name('edit');
         Route::get('/{id}/confirmar-exclusao', PacientDelete::class)->name('confirm_delete');
-    });
-
-    //Especialidade
-    Route::prefix('especialidade')->as('specialty.')->group(function () {
-        Route::get('/', SpecialtyIndex::class)->name('index');
-        Route::get('/cadastro', SpecialtyCreate::class)->name('create');
-        Route::get('/{id}/editar', SpecialtyEdit::class)->name('edit');
-        Route::get('/{id}/confirmar-exclusao', SpecialtyDelete::class)->name('confirm_delete');
     });
 });

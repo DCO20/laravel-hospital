@@ -15,18 +15,22 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('occupation.index') }}" :active="request()->routeIs('occupation*')">
-                        Ocupações
+                    <x-jet-nav-link href="{{ route('specialty.index') }}" :active="request()->routeIs('specialty*')">
+                        Especialidades
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('employee.index') }}" :active="request()->routeIs('employee*')">
                         Funcionários
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('doctor.index') }}" :active="request()->routeIs('doctor*')">
+                        Médicos
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('occupation.index') }}" :active="request()->routeIs('occupation*')">
+                        Ocupações
+                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('pacient.index') }}" :active="request()->routeIs('pacient*')">
                         Pacientes
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('specialty.index') }}" :active="request()->routeIs('specialty*')">
-                        Especialidades
-                    </x-jet-nav-link>
+
                 </div>
             </div>
 
