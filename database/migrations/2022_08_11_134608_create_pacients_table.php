@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('document');
+            $table->string('cpf');
             $table->string('phone');
             $table->string('street');
             $table->string('number');

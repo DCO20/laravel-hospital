@@ -13,7 +13,7 @@ class PacientEdit extends Component
 
     public $email;
 
-    public $document;
+    public $cpf;
 
     public $phone;
 
@@ -26,7 +26,7 @@ class PacientEdit extends Component
     protected array $rules = [
         'name' => 'required|max:50',
         'email' => 'required|email',
-        'document' => 'required|cpf|max:15',
+        'cpf' => 'required|cpf|max:15',
         'phone' => 'required|max:15',
         'street' => 'required|max:50',
         'number' => 'required|max:10',
@@ -38,7 +38,7 @@ class PacientEdit extends Component
         $this->pacient_id = $pacient->id;
         $this->name = $pacient->name;
         $this->email = $pacient->email;
-        $this->document = $pacient->document;
+        $this->cpf = $pacient->cpf;
         $this->phone = $pacient->phone;
         $this->street = $pacient->street;
         $this->number = $pacient->number;
@@ -54,7 +54,7 @@ class PacientEdit extends Component
         $pacient->update([
             'name' => $this->name,
             'email' => $this->email,
-            'document' => $this->document,
+            'cpf' => $this->cpf,
             'phone' => $this->phone,
             'street' => $this->street,
             'number' => $this->number,

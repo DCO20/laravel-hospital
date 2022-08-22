@@ -11,7 +11,7 @@ class PacientCreate extends Component
 
     public $email = null;
 
-    public $document = null;
+    public $cpf = null;
 
     public $phone = null;
 
@@ -24,7 +24,7 @@ class PacientCreate extends Component
     protected array $rules = [
         'name' => 'required|max:50',
         'email' => 'required|email',
-        'document' => 'required|cpf|max:15',
+        'cpf' => 'required|cpf|max:15',
         'phone' => 'required|max:15',
         'street' => 'required|max:50',
         'number' => 'required|max:10',
@@ -37,7 +37,7 @@ class PacientCreate extends Component
         Pacient::create([
             'name' => $this->name,
             'email' => $this->email,
-            'document' => $this->document,
+            'cpf' => $this->cpf,
             'phone' => $this->phone,
             'street' => $this->street,
             'number' => $this->number,

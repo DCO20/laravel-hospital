@@ -15,8 +15,8 @@
             <form wire:submit.prevent="store" method="POST">
                 <div class="grid grid-cols-3 grid-flow-col gap-3">
                     <x-input wire:model.defer="name" type="text" label="Nome:" placeholder="Nome" required/>
+                    <x-input wire:model.defer="cpf" class="cpf" label="CPF:" placeholder="CPF" />
                     <x-input wire:model.defer="email" type="email" label="Email:" placeholder="Email" />
-                    <x-input wire:model.defer="document" class="cpf" label="CPF:" placeholder="CPF" />
                 </div>
                 <div class="grid grid-cols-3 grid-flow-col gap-3 mt-5">
                     <x-input wire:model.defer="phone" class="phone" label="Telefone:" placeholder="Telefone"/>

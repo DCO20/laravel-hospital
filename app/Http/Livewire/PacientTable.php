@@ -90,8 +90,8 @@ final class PacientTable extends PowerGridComponent
     {
         return PowerGrid::eloquent()
             ->addColumn('name')
+            ->addColumn('cpf')
             ->addColumn('email')
-            ->addColumn('document')
             ->addColumn('phone')
             ->addColumn('street')
             ->addColumn('number');
@@ -119,11 +119,11 @@ final class PacientTable extends PowerGridComponent
                 ->sortable()
                 ->searchable(),
 
-            Column::make('Email', 'email')
+            Column::make('CPF', 'cpf')
                 ->sortable()
                 ->searchable(),
 
-            Column::make('Documento', 'document')
+            Column::make('Email', 'email')
                 ->sortable()
                 ->searchable(),
 
