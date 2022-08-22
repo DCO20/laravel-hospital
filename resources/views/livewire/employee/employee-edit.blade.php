@@ -46,6 +46,7 @@
                         ease-in-out
                         m-0
                         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+
                         @foreach ($occupations as $occupation)
                             <option value="{{ $occupation->id }}">{{ $occupation->name }}</option>
                         @endforeach
