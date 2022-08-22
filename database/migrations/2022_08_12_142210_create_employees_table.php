@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->foreignId('occupation_id')->constrained();
-            $table->foreignId('specialty_id')->constrained()->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

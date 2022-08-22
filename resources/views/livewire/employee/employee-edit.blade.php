@@ -1,9 +1,9 @@
-@section('title', 'Editar do Funcionário')
+@section('title', 'Editar Funcionário')
 
 <x-slot name="header">
     <div class="flex justify-between">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Editar do Funcionário
+            Editar Funcionário
         </h2>
     </div>
 </x-slot>
@@ -19,7 +19,7 @@
             @endif
         </div>
 
-        <div class=" p-5 bg-white overflow-hidden shadow-xl sm:rounded-lg">
+        <div class=" p-5 bg-white overflow-hidden shaow-xl sm:rounded-lg">
 
             <form wire:submit.prevent="update" method="POST">
                 <div class="grid grid-cols-3 grid-flow-col gap-3">

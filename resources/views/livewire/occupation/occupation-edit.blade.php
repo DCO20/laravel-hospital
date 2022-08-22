@@ -1,9 +1,9 @@
-@section('title', 'Cadastro da Ocupação')
+@section('title', 'Editar Ocupação')
 
 <x-slot name="header">
     <div class="flex justify-between">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Cadastro da Ocupação
+            Editar Ocupação
         </h2>
     </div>
 </x-slot>

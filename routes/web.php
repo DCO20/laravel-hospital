@@ -42,27 +42,31 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::prefix('ocupacao')->group(function () {
-        Route::get('/', OccupationIndex::class)->name('occupation.index');
-        Route::get('/cadastro', OccupationCreate::class)->name('occupation.create');
-        Route::get('/{id}/editar', OccupationEdit::class)->name('occupation.edit');
-        Route::get('/{id}/confirmar-exclusao', OccupationDelete::class)->name('occupation.confirm_delete');
+    //Ocupação
+    Route::prefix('ocupacao')->as('occupation.')->group(function () {
+        Route::get('/', OccupationIndex::class)->name('index');
+        Route::get('/cadastro', OccupationCreate::class)->name('create');
+        Route::get('/{id}/editar', OccupationEdit::class)->name('edit');
+        Route::get('/{id}/confirmar-exclusao', OccupationDelete::class)->name('confirm_delete');
     });
 
-    Route::prefix('funcionario')->group(function () {
-        Route::get('/', EmployeeIndex::class)->name('employee.index');
-        Route::get('/cadastro', EmployeeCreate::class)->name('employee.create');
-        Route::get('/{id}/editar', EmployeeEdit::class)->name('employee.edit');
-        Route::get('/{id}/confirmar-exclusao', EmployeeDelete::class)->name('employee.confirm_delete');
+    //Funcionário
+    Route::prefix('funcionario')->as('employee.')->group(function () {
+        Route::get('/', EmployeeIndex::class)->name('index');
+        Route::get('/cadastro', EmployeeCreate::class)->name('create');
+        Route::get('/{id}/editar', EmployeeEdit::class)->name('edit');
+        Route::get('/{id}/confirmar-exclusao', EmployeeDelete::class)->name('confirm_delete');
     });
 
-    Route::prefix('paciente')->group(function () {
-        Route::get('/', PacientIndex::class)->name('pacient.index');
-        Route::get('/cadastro', PacientCreate::class)->name('pacient.create');
-        Route::get('/{id}/editar', PacientEdit::class)->name('pacient.edit');
-        Route::get('/{id}/confirmar-exclusao', PacientDelete::class)->name('pacient.confirm_delete');
+    //Paciente
+    Route::prefix('paciente')->as('pacient.')->group(function () {
+        Route::get('/', PacientIndex::class)->name('index');
+        Route::get('/cadastro', PacientCreate::class)->name('create');
+        Route::get('/{id}/editar', PacientEdit::class)->name('edit');
+        Route::get('/{id}/confirmar-exclusao', PacientDelete::class)->name('confirm_delete');
     });
 
+    //Especialidade
     Route::prefix('especialidade')->as('specialty.')->group(function () {
         Route::get('/', SpecialtyIndex::class)->name('index');
         Route::get('/cadastro', SpecialtyCreate::class)->name('create');

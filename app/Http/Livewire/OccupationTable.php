@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Models\Occupation;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Carbon;
 use PowerComponents\LivewirePowerGrid\Button;
 use PowerComponents\LivewirePowerGrid\Column;
 use PowerComponents\LivewirePowerGrid\Exportable;
@@ -90,9 +89,7 @@ final class OccupationTable extends PowerGridComponent
     public function addColumns(): PowerGridEloquent
     {
         return PowerGrid::eloquent()
-            ->addColumn('name')
-            ->addColumn('created_at_formatted', fn (Occupation $model) => Carbon::parse($model->created_at)->format('d/m/Y'))
-            ->addColumn('updated_at_formatted', fn (Occupation $model) => Carbon::parse($model->updated_at)->format('d/m/Y'));
+            ->addColumn('name');
     }
 
     /*
@@ -116,16 +113,6 @@ final class OccupationTable extends PowerGridComponent
             Column::make('Nome', 'name')
                 ->sortable()
                 ->searchable(),
-
-            Column::make('Criação', 'created_at_formatted', 'created_at')
-                ->searchable()
-                ->sortable()
-                ->makeInputDatePicker(),
-
-            Column::make('Atualização', 'updated_at_formatted', 'updated_at')
-                ->searchable()
-                ->sortable()
-                ->makeInputDatePicker(),
 
         ];
     }
