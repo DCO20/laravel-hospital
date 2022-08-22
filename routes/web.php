@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Livewire\Attendance\AttendanceCreate;
+use App\Http\Livewire\Attendance\AttendanceEdit;
+use App\Http\Livewire\Attendance\AttendanceIndex;
 use App\Http\Livewire\Doctor\DoctorCreate;
 use App\Http\Livewire\Doctor\DoctorDelete;
 use App\Http\Livewire\Doctor\DoctorEdit;
@@ -45,6 +48,13 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    //Atendimento
+    Route::prefix('atendimento')->as('attendance.')->group(function () {
+        Route::get('/', AttendanceIndex::class)->name('index');
+        Route::get('/cadastro', AttendanceCreate::class)->name('create');
+        Route::get('/{id}/editar', AttendanceEdit::class)->name('edit');
+    });
 
     //Especialidade
     Route::prefix('especialidade')->as('specialty.')->group(function () {

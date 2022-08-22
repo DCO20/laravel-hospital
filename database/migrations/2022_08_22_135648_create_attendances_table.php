@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
-            $table->enum('status', ['Atendimento', ['Concluído']])->default('Atendimento');
+            $table->enum('status', ['Atendimento', 'Concluído'])->default('Atendimento');
             $table->text('description')->nullable();
             $table->foreignId('doctor_id')->constrained();
             $table->foreignId('pacient_id')->constrained();
