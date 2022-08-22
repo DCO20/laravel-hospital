@@ -12,6 +12,10 @@ use App\Http\Livewire\Pacient\PacientCreate;
 use App\Http\Livewire\Pacient\PacientDelete;
 use App\Http\Livewire\Pacient\PacientEdit;
 use App\Http\Livewire\Pacient\PacientIndex;
+use App\Http\Livewire\Specialty\SpecialtyCreate;
+use App\Http\Livewire\Specialty\SpecialtyDelete;
+use App\Http\Livewire\Specialty\SpecialtyEdit;
+use App\Http\Livewire\Specialty\SpecialtyIndex;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,5 +61,12 @@ Route::middleware([
         Route::get('/cadastro', PacientCreate::class)->name('pacient.create');
         Route::get('/{id}/editar', PacientEdit::class)->name('pacient.edit');
         Route::get('/{id}/confirmar-exclusao', PacientDelete::class)->name('pacient.confirm_delete');
+    });
+
+    Route::prefix('especialidade')->as('specialty.')->group(function () {
+        Route::get('/', SpecialtyIndex::class)->name('index');
+        Route::get('/cadastro', SpecialtyCreate::class)->name('create');
+        Route::get('/{id}/editar', SpecialtyEdit::class)->name('edit');
+        Route::get('/{id}/confirmar-exclusao', SpecialtyDelete::class)->name('confirm_delete');
     });
 });
