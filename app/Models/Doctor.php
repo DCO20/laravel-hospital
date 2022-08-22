@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Specialty extends Model
+class Doctor extends Model
 {
     use SoftDeletes;
 
@@ -14,7 +14,7 @@ class Specialty extends Model
      *
      * @var string
      */
-    protected $table = 'specialties';
+    protected $table = 'doctors';
 
     /**
      * Atributos da tabela do banco de dados
@@ -23,6 +23,10 @@ class Specialty extends Model
      */
     protected $fillable = [
         'name',
+        'cpf',
+        'email',
+        'phone',
+        'specialty_id',
     ];
 
     /**
@@ -37,12 +41,12 @@ class Specialty extends Model
     ];
 
     /**
-     * obtêm os médicos
+     * obtém a especialidade
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function doctors()
+    public function specialty()
     {
-        return $this->hasMany(Doctor::class);
+        return $this->belongsTo(Specialty::class)->withTrashed();
     }
 }
